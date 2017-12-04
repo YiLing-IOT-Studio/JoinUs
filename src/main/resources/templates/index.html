@@ -20,8 +20,8 @@
 <div class="container col-md-10 col-md-offset-1">
     <main>
         <section id="section_aboutUs" class="clearfix">
-            <div class="section_title h3">
-                <p id="section_aboutUs_title">About Us</p>
+            <div class="section_title">
+                <p id="section_aboutUs_title h3">About Us</p>
                 <hr/>
             </div>
             <div class="section_main">
@@ -137,8 +137,8 @@
             </div>
         </section>
         <section id="section_joinUs">
-            <div class="section_title h3">
-                <p id="section_joinUs_title">Join Us</p>
+            <div class="section_title">
+                <p id="section_joinUs_title h3">Join Us</p>
                 <hr/>
             </div>
             <div class="section_main">
@@ -160,8 +160,8 @@
                             <textarea rows="5" id="Selfintro" class="form-control" placeholder="自我简述"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="sdept">专业：</label>
-                            <select class="form-control" id="sdept">
+                            <label for="Pro">专业：</label>
+                            <select class="form-control" id="Pro">
                                 <option selected>物联网工程</option>
                                 <option>计算机科学与技术</option>
                                 <option>软件工程</option>
@@ -173,9 +173,44 @@
                     </form>
             </div>
         </section>
-        <form>
-
-        </form>
+        <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-describedby="students's information">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p class="modal-title h4" id="myModalLabel">你的报名信息为：</p>
+                    </div>
+                    <div class="modal-body">
+                        <form action="post" role="form">
+                            <div class="form-group">
+                                <label for="Userid">姓名：</label>
+                                <input type="text" id="Userid" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="Telephone">电话：</label>
+                                <input type="tel" id="Telephone" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="Emailbox">邮箱：</label>
+                                <input type="email" id="Emailbox" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="Selfintroduction">自我简述：</label>
+                                <textarea rows="5" id="Selfintroduction" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="Professional">专业：</label>
+                                <input type="text" id="Professional" class="form-control"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">确认</button>
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" >保存修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
 
