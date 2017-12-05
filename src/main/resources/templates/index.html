@@ -169,7 +169,7 @@
                             </select>
                             <p class="help-block">温馨提示：团队招新时间为每年的秋季开学（具体时间待定），在非招新时间段填写报名表，没有效哦!</p>
                         </div>
-                        <button type="button" id="Submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
+                        <button type="button" id="btn1" name="btn1" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
                     </form>
             </div>
         </section>
@@ -181,32 +181,32 @@
                         <p class="modal-title h4" id="myModalLabel">你的报名信息为：</p>
                     </div>
                     <div class="modal-body">
-                        <form action="post" role="form">
+                        <form action="post" role="form" id="joinForm" name="joinForm">
                             <div class="form-group">
                                 <label for="Userid">姓名：</label>
-                                <input type="text" id="Userid" class="form-control"/>
+                                <input type="text" id="Userid" name="Userid" class="form-control"/>
                             </div>
                             <div class="form-group">
                                 <label for="Telephone">电话：</label>
-                                <input type="tel" id="Telephone" class="form-control"/>
+                                <input type="tel" id="Telephone" name="Telephone" class="form-control"/>
                             </div>
                             <div class="form-group">
                                 <label for="Emailbox">邮箱：</label>
-                                <input type="email" id="Emailbox" class="form-control"/>
+                                <input type="email" id="Emailbox" name="Emailbox" class="form-control"/>
                             </div>
                             <div class="form-group">
                                 <label for="Selfintroduction">自我简述：</label>
-                                <textarea rows="5" id="Selfintroduction" class="form-control"></textarea>
+                                <textarea rows="5" id="Selfintroduction" name="Selfintroduction" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="Professional">专业：</label>
-                                <input type="text" id="Professional" class="form-control"/>
+                                <input type="text" id="Professional" name="Professional" class="form-control"/>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">确认</button>
-                        <button type="submit" class="btn btn-primary" data-dismiss="modal" >保存修改</button>
+                        <button type="button" class="btn btn-default" id="btn2" name="btn2" form="joinForm" data-dismiss="modal">确认</button>
+                        <button type="submit" class="btn btn-primary" id="sub1" name="sub1" form="joinForm" data-dismiss="modal" >保存修改</button>
                     </div>
                 </div>
             </div>

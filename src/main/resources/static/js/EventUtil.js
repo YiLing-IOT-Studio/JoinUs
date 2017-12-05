@@ -148,8 +148,8 @@ window.onload=function(){
         });
     })();
     (function(){
-        var Submit=document.getElementById("Submit");
-        EventUtil.addHandler(Submit,"click",function () {
+        var btn1=document.getElementById("btn1");
+        EventUtil.addHandler(btn1,"click",function () {
             var UidVal=document.getElementById("Uid").value;
             var TelVal=document.getElementById("Tel").value;
             var EmailVal=document.getElementById("Email").value;
