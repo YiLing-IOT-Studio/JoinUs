@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>BootstrapTest1</title>
+    <title>JoinUs</title>
     <meta name="keywords" content="关键词"/>
     <meta  name="description" content="描述"/>
     <!--<link rel="shortcut icon" href="images/logo1.png" />-->
@@ -20,8 +20,8 @@
 <div class="container col-md-10 col-md-offset-1">
     <main>
         <section id="section_aboutUs" class="clearfix">
-            <div class="section_title">
-                <p id="section_aboutUs_title h3">About Us</p>
+            <div class="section_title h3">
+                <p id="section_aboutUs_title">About Us</p>
                 <hr/>
             </div>
             <div class="section_main">
@@ -36,28 +36,28 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="img/1.jpg" alt="...">
+                            <img src="img/1.jpg" alt="..."/>
                             <div class="carousel-caption">
                                 <p class="h3">Andriod</p>
                                 <p>to be no.1</p>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="img/2.jpg" alt="...">
+                            <img src="img/2.jpg" alt="..."/>
                             <div class="carousel-caption">
                                 <p class="h3">Andriod</p>
                                 <p>to be no.1</p>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="img/3.jpg" alt="...">
+                            <img src="img/3.jpg" alt="..."/>
                             <div class="carousel-caption">
                                 <p class="h3">Andriod</p>
                                 <p>to be no.1</p>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="img/4.jpg" alt="...">
+                            <img src="img/4.jpg" alt="..."/>
                             <div class="carousel-caption">
                                 <p class="h3">Andriod</p>
                                 <p>to be no.1</p>
@@ -137,12 +137,12 @@
             </div>
         </section>
         <section id="section_joinUs">
-            <div class="section_title">
-                <p id="section_joinUs_title h3">Join Us</p>
+            <div class="section_title  h3">
+                <p id="section_joinUs_title">Join Us</p>
                 <hr/>
             </div>
             <div class="section_main">
-                    <form action="post" role="form">
+                    <form role="form">
                         <div class="form-group">
                             <label for="Uid">姓名：</label>
                             <input type="text" id="Uid" class="form-control" placeholder="姓名"/>
@@ -162,14 +162,14 @@
                         <div class="form-group">
                             <label for="Pro">专业：</label>
                             <select class="form-control" id="Pro">
-                                <option selected>物联网工程</option>
+                                <option selected="selected">物联网工程</option>
                                 <option>计算机科学与技术</option>
                                 <option>软件工程</option>
                                 <option>网络工程</option>
                             </select>
                             <p class="help-block">温馨提示：团队招新时间为每年的秋季开学（具体时间待定），在非招新时间段填写报名表，没有效哦!</p>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" id="Submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Submit</button>
                     </form>
             </div>
         </section>

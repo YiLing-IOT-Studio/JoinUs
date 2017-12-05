@@ -147,5 +147,27 @@ window.onload=function(){
             }
         });
     })();
+    (function(){
+        var Submit=document.getElementById("Submit");
+        EventUtil.addHandler(Submit,"click",function () {
+            var UidVal=document.getElementById("Uid").value;
+            var TelVal=document.getElementById("Tel").value;
+            var EmailVal=document.getElementById("Email").value;
+            var SelfintroVal=document.getElementById("Selfintro").value;
+            var ProVal=document.getElementById("Pro").value;
+
+            var UseridVal=document.getElementById("Userid");
+            var TelephoneVal=document.getElementById("Telephone");
+            var EmailboxVal=document.getElementById("Emailbox");
+            var SelfintroductionVal=document.getElementById("Selfintroduction");
+            var ProfessionalVal=document.getElementById("Professional");
+
+            UseridVal.value=UidVal;
+            TelephoneVal.value=TelVal;
+            EmailboxVal.value=EmailVal
+            SelfintroductionVal.value=SelfintroVal;
+            ProfessionalVal.value=ProVal;
+        });
+    })();
 };
 
