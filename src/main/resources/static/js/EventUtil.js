@@ -169,5 +169,11 @@ window.onload=function(){
             ProfessionalVal.value=ProVal;
         });
     })();
+    (function(){
+        var sub1=document.getElementById("sub1");
+        EventUtil.addHandler(sub1,"click",function () {
+           alert("报名成功！");
+        });
+    })();
 };
 
