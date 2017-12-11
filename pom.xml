@@ -25,29 +25,69 @@
 	</properties>
 
 	<dependencies>
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
-        <!--</dependency>-->
+        <!--jpa-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+        <!--thymeleaf-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
+        <!--web-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-        <!--<dependency>-->
-        <!--<groupId>mysql</groupId>-->
-        <!--<artifactId>mysql-connector-java</artifactId>-->
-        <!--<scope>runtime</scope>-->
-        <!--</dependency>-->
+        <!--mysql-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<!--spring-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-beans</artifactId>-->
+			<!--<version>5.0.2.RELEASE</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework</groupId>-->
+			<!--<artifactId>spring-core</artifactId>-->
+			<!--<version>5.0.2.RELEASE</version>-->
+		<!--</dependency>-->
+
+        <!--lombol-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+            <scope>provided</scope>
+        </dependency>
+
+		<!--在linux关闭springboot-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- linux关闭项目安全验证 -->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-security</artifactId>-->
+		<!--</dependency>-->
+
 	</dependencies>
 
 	<build>
