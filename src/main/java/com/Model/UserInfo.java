@@ -37,11 +37,26 @@ public class UserInfo {
     @Column(name = "professional")
     private String professional;
 
+    public UserInfo() {
+    }
+
     public UserInfo(String name, String tel, String email, String selfbriefly, String professional) {
         this.name = name;
         this.tel = tel;
         this.email = email;
         this.selfbriefly = selfbriefly;
         this.professional = professional;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tel='" + tel + '\'' +
+                ", email='" + email + '\'' +
+                ", selfbriefly='" + selfbriefly + '\'' +
+                ", professional='" + professional + '\'' +
+                '}';
     }
 }

@@ -161,26 +161,51 @@ window.onload=function(){
         });
     })();
     (function(){
-        var sub1=document.getElementById("sub1");
-        EventUtil.addHandler(sub1,"click",function () {
-            //将表单数据转化为Json格式
-            var formT = $("#joinForm").serializeJSON();//返回Object对象
+        $('#sub1').on('click',function () {
+            var formT = $('#joinForm').serializeArray();//返回Object对象
             var formJ = JSON.stringify(formT);//返回Json字符串
             $.ajax({
-                type: "post",
-                url: "",
-                data: formJ,
-                dataType: "json",
-                contentType: "application/json",
-                success: function () {
-                    alert("报名成功！");
+                type:'POST',
+                url:'/submit',
+                dataTpe:'text',
+                data:{
+                    'data':formJ
                 },
-                error: function () {
+                success:function () {
+                    alert("报名成功！");
+                    window.location.replace("http://localhost:8080")
+                    console.log(formJ);
+                },
+                error:function () {
                     alert("报名失败！");
                 }
             })
-
         });
+        // var sub1=document.getElementById("sub1");
+        // EventUtil.addHandler(sub1,"click",function () {
+        //     //将表单数据转化为Json格式
+        //     //  var formT = $("#joinForm").serializeJSON();//返回Object对象
+        //     // var formJ = JSON.stringify(formT);//返回Json字符串
+        //     var Userid = $('#Userid').val();
+        //     var Telephone = $('#Telephone').val();
+        //     $.ajax({
+        //         type: "POST",
+        //         url: "submit",
+        //         dataType: "text",
+        //         // $('joinForm').serialize()
+        //         data:{
+        //             'Userid':Userid,
+        //             'Telephone':Telephone
+        //         } ,
+        //         success: function () {
+        //             alert("报名成功！");
+        //         },
+        //         error: function () {
+        //             alert("报名失败！");
+        //         }
+        //     })
+
+        // });
     })();
 };
 // 创建XMLRequest对象
