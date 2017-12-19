@@ -17,10 +17,12 @@ section{
     border-bottom: 1px solid #ccc;
     margin-bottom: 40px;
 }
-#title{
+
+.title {
     color: #636660;
 }
-#Selfintro{
+
+.Selfintro {
     margin: 15px 0;
     line-height: 2em;
 }

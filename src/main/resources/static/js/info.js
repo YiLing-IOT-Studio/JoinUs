@@ -3,33 +3,32 @@
  */
 
 window.onload = function () {
-    var EventUtil = {
-        //添加事件处理程序
-        addHandler: function (element, type, handler) {
-            if (element.addEventListener) {
-                element.addEventListener(type, handler, false);//DOM2级   默认冒泡阶段
-            } else if (element.attachEvent) {   //针对IE
-                element.attachEvent("on" + type, handler);
-            } else {
-                element["on" + type] = handler;//默认DOM0级
-            }
+    $.ajax({
+        type: 'get',
+        url: '/submit',
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            $.each(data, function (index, obj) {
+                var sec = $('<section></section>');
+                // 添加标题
+                var Uid = $('<p class="h5 left"></p>');
+                Uid.append('<srtong>' + obj['name'] + '</srtong>');
+                sec.append(Uid);
+                // 添加主体
+                var SelfIntro = $('<div class="Selfintroduction"></div>');
+                SelfIntro.append(obj['selfbriefly']);
+                sec.append(SelfIntro);
+                //添加其余详细信息
+                var Details = $('<p></p>');
+                Details.append(obj['professional'] + ' /' + obj['tel'] + ' /' + obj['email']);
+                sec.append(Details);
+                $('#display').append(sec);
+            });
         },
-        //取得事件对象
-        getEvent: function (event) {
-            return event ? event : window.event;//IE:window.event
-        },
-        //事件目标
-        getTarget: function (event) {
-            return event.target || event.srcElement;
-        },
-        //取消默认行为
-        preventDafault: function () {
-            if (event.preventDefault) {
-                event.preventDefault();
-            } else {
-                event.returnValue = false;//IE
-            }
-        },
-    };
+        error: function () {
+            alert('获取消息失败！');
+        }
+    });
 };
 

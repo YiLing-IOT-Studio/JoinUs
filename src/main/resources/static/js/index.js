@@ -1,6 +1,8 @@
 /**
  * Created by 周邓 on 2017/12/4.
  */
+// document.write("<script language=javascript src=’https://cdn.bootcss.com/jquery.serializeJSON/2.8.1/jquery.serializejson.js’></script>");
+// document.write("<script language=javascript src=’jquery-1.12.0.min.js’></script>");
 window.onload=function(){
     var EventUtil= {
         //添加事件处理程序
@@ -167,7 +169,7 @@ window.onload=function(){
             $.ajax({
                 type:'POST',
                 url:'/submit',
-                dataTpe:'text',
+                dataType: 'text',
                 data:{
                     'data':formJ
                 },
@@ -179,7 +181,8 @@ window.onload=function(){
                 error:function () {
                     alert("报名失败！");
                 }
-            })
+            });
+            $('#myModal').modal('hide');
         });
         // var sub1=document.getElementById("sub1");
         // EventUtil.addHandler(sub1,"click",function () {

@@ -9,8 +9,8 @@
     <meta name="keywords" content="关键词"/>
     <meta  name="description" content="描述"/>
     <!--<link rel="shortcut icon" href="images/logo1.png" />-->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/index.css" rel="stylesheet"/>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../static/css/index.css" rel="stylesheet"/>
 </head>
 <body>
     <header>
@@ -37,9 +37,9 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
-                            <img src="img/bc.jpg" alt="..."/>
+                            <img src="../static/img/1.jpg" alt="..."/>
                             <div class="carousel-caption">
-                                <p class="h3">Andriod</p>
+                                <p class="h3">后端设计</p>
                                 <p>to be no.1</p>
                             </div>
                         </div>
@@ -176,6 +176,7 @@
                     </form>
             </div>
         </section>
+        <a href="info.html" target="_blank">info.html</a>
         <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-describedby="students's information">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -221,33 +222,14 @@
 
     </footer>
 </div>
-    <script src="js/jquery-1.12.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="../static/js/jquery-1.12.0.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/index.js"></script>
     <script>
         //改变轮播框时间
         $(".carousel").carousel({
             interval: 2500
         });
     </script>
-<script>
-//    $('#sub1').on('click',function () {
-//        var Userid = $('#Userid').val();
-//        $.ajax({
-//            type:'POST',
-//            url:'http://localhost:8080/submit',
-//            dataTpe:'json',
-//            data:{
-//                'Userid':Userid
-//            },
-//            success:function () {
-//                alert('a');
-//            },
-//            error:function () {
-//                alert('b');
-//            }
-//        })
-//    })
-</script>
 </body>
 </html>
