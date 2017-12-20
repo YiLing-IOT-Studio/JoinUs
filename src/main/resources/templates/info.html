@@ -49,17 +49,82 @@
 <script src="../static/js/jquery-1.12.0.min.js"></script>
 <script src="../static/js/bootstrap.min.js"></script>
 <script src="../static/js/paging.js"></script>
-<script src="../static/js/info.js"></script>
+<!--<script src="../static/js/info.js"></script>-->
 <script>
     //分页
-    $("#pagination").paging({
-        pageNo:10,
-        totalPage: 9,
-        totalSize: 90,
-        callback: function(num) {
-            alert(num)
-        }
-    })
+    //    $("#pagination").paging({
+    //        pageNo:1,
+    //        totalPage: 9,
+    //        totalSize: 90,
+    //        callback: function(currentPage) {
+    //            $.ajax({
+    //                type: 'get',
+    //                url: '/submit',
+    //                dataType: 'json',
+    //                async: false,
+    //                success: function (data) {
+    //                    $.each(data, function (index, obj) {
+    //                    var sec = $('<section></section>');
+    //                    // 添加标题
+    //                    var Uid = $('<p class="h5 left"></p>');
+    //                    Uid.append('<srtong>' + obj['name'] + '</srtong>');
+    //                    sec.append(Uid);
+    //                    // 添加主体
+    //                    var SelfIntro = $('<div class="Selfintroduction"></div>');
+    //                    SelfIntro.append(obj['selfbriefly']);
+    //                    sec.append(SelfIntro);
+    //                    //添加其余详细信息
+    //                    var Details = $('<p></p>');
+    //                    Details.append(obj['professional'] + ' /' + obj['tel'] + ' /' + obj['email']);
+    //                    sec.append(Details);
+    //                    $('#display').append(sec);
+    //                     });
+    //        }
+    //    });
+
+    //    参数为当前页
+    ajaxTest(1);
+    function ajaxTest(currentPage) {
+        var rows = 10;
+        $.ajax({
+            type: 'get',
+            url: '/submit',
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                $.each(data, function (index, obj) {
+                    if (index > rows * (currentPage - 1) && index <= rows * currentPage) {
+                        var sec = $('<section></section>');
+                        // 添加标题
+                        var Uid = $('<p class="h5 left"></p>');
+                        Uid.append('<srtong>' + obj['name'] + '</srtong>');
+                        sec.append(Uid);
+                        // 添加主体
+                        var SelfIntro = $('<div class="Selfintroduction"></div>');
+                        SelfIntro.append(obj['selfbriefly']);
+                        sec.append(SelfIntro);
+                        //添加其余详细信息
+                        var Details = $('<p></p>');
+                        Details.append(obj['professional'] + ' /' + obj['tel'] + ' /' + obj['email']);
+                        sec.append(Details);
+                        $('#display').append(sec);
+                    }
+                });
+                //分页
+                $("#pagination").paging({
+                    pageNo: currentPage,//当前所在页码
+                    totalPage: data.totalPage,//总页数
+                    totalSize: data.totalSize,//总记录数
+                    callback: function (currentPage) {
+                        ajaxTest(currentPage)
+                    }
+                })
+            },
+            error: function () {
+                alert('获取消息失败！');
+            }
+        })
+    }
 </script>
 </body>
 </html>
