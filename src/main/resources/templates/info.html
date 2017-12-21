@@ -85,7 +85,6 @@
     //    参数为当前页
     ajaxTest(1);
     function ajaxTest(currentPage) {
-        var rows = 10;
         $.ajax({
             type: 'get',
             url: '/submit',
@@ -93,24 +92,21 @@
             async: false,
             success: function (data) {
                 $.each(data, function (index, obj) {
-                    if (index > rows * (currentPage - 1) && index <= rows * currentPage) {
-                        var sec = $('<section></section>');
-                        // 添加标题
-                        var Uid = $('<p class="h5 left"></p>');
-                        Uid.append('<srtong>' + obj['name'] + '</srtong>');
-                        sec.append(Uid);
-                        // 添加主体
-                        var SelfIntro = $('<div class="Selfintroduction"></div>');
-                        SelfIntro.append(obj['selfbriefly']);
-                        sec.append(SelfIntro);
-                        //添加其余详细信息
-                        var Details = $('<p></p>');
-                        Details.append(obj['professional'] + ' /' + obj['tel'] + ' /' + obj['email']);
-                        sec.append(Details);
-                        $('#display').append(sec);
-                    }
+                    var sec = $('<section></section>');
+                    // 添加标题
+                    var Uid = $('<p class="h5 left"></p>');
+                    Uid.append('<srtong>' + obj['name'] + '</srtong>');
+                    sec.append(Uid);
+                    // 添加主体
+                    var SelfIntro = $('<div class="Selfintroduction"></div>');
+                    SelfIntro.append(obj['selfbriefly']);
+                    sec.append(SelfIntro);
+                    //添加其余详细信息
+                    var Details = $('<p></p>');
+                    Details.append(obj['professional'] + ' /' + obj['tel'] + ' /' + obj['email']);
+                    sec.append(Details);
+                    $('#display').append(sec);
                 });
-
                 //分页
                 $("#pagination").paging({
                     pageNo: currentPage,//当前所在页码

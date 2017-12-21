@@ -4,6 +4,7 @@
 		this.element = element;
 		//传入形参
 		this.options = {
+            rows: 10,
 			pageNo: options.pageNo||1,
 			totalPage: options.totalPage,
 			totalSize:options.totalSize,
