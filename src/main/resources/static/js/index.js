@@ -1,8 +1,7 @@
 /**
  * Created by 周邓 on 2017/12/4.
  */
-// document.write("<script language=javascript src=’https://cdn.bootcss.com/jquery.serializeJSON/2.8.1/jquery.serializejson.js’></script>");
-// document.write("<script language=javascript src=’jquery-1.12.0.min.js’></script>");
+
 window.onload=function(){
     var EventUtil= {
         //添加事件处理程序
@@ -65,6 +64,14 @@ window.onload=function(){
     function removeBefore(element){
         var parent = element.parentNode;
         parent.removeChild(element.previousSibling);
+    };
+    function insertAfter(newElement,element){
+        var parent = element.parentNode;
+        if (parent.lastChild === element) {
+            parent.appendChild(newElement);
+        } else {
+            parent.insertBefore(newElement, element.nextSibling);
+        }
     };
     function removeAfter(element){
         var parent = element.parentNode;
@@ -184,77 +191,6 @@ window.onload=function(){
             });
             $('#myModal').modal('hide');
         });
-        // var sub1=document.getElementById("sub1");
-        // EventUtil.addHandler(sub1,"click",function () {
-        //     //将表单数据转化为Json格式
-        //     //  var formT = $("#joinForm").serializeJSON();//返回Object对象
-        //     // var formJ = JSON.stringify(formT);//返回Json字符串
-        //     var Userid = $('#Userid').val();
-        //     var Telephone = $('#Telephone').val();
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "submit",
-        //         dataType: "text",
-        //         // $('joinForm').serialize()
-        //         data:{
-        //             'Userid':Userid,
-        //             'Telephone':Telephone
-        //         } ,
-        //         success: function () {
-        //             alert("报名成功！");
-        //         },
-        //         error: function () {
-        //             alert("报名失败！");
-        //         }
-        //     })
-
-        // });
     })();
 };
-// 创建XMLRequest对象
-// function createXHR(){
-//     if(typeof  XMLHttpRequest != "undefined"){
-//         return new XMLHttpRequest();
-//     }else if(typeof ActiveXObject != "undefined"){
-//         if(typeof arguments.callee.activeXString != "string"){
-//             var versions = ["MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp"],i,len;
-//             for(i=0,len = versions.length;i<len;i++){
-//                 try{
-//                     new ActiveXObject(versions[i]);
-//                     arguments.callee.activeXString = versions[i];
-//                     break;
-//                 }catch (ex){
-//                     alert("Can't build XML");
-//                 }
-//             }
-//         }
-//         return new ActiveXObject(arguments.callee.activeXString);
-//     }else{
-//         throw new Error("No XHR object available.");
-//     }
-// }
-// 原生IS实现
-// (function(){
-//     var sub1=document.getElementById("sub1");
-//     EventUtil.addHandler(sub1,"click",function () {
-//         var xhr = createXHR();
-//         xhr.onreadystatechange = function(){
-//             if(xhr.readyState == 4){
-//                 if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-//                     // 成功后执行的代码
-//                     // alert(xhr.responseText);
-//                     alert("报名成功！");
-//                 }else{
-//                     // alert("Request was unsuccessful:" + xhr.status);
-//                     alert("报名失败，请重试！");
-//                 }
-//             }
-//         };
-//         xhr.open("post",url,true);
-//         xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-//         var form=document.getElementById("joinForm");
-//         var form1=form.serialize();
-//         xhr.send(form1);
-//     });
-// })();
 

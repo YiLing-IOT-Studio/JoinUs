@@ -86,7 +86,7 @@
 			var me = this;
 			me.element.off('click', 'a');
 			me.element.on('click', 'a', function() {
-				var num = $(this).html();
+				var currentPage = $(this).html();
 				var id=$(this).attr("id");
 				if(id == "prePage") {
 					if(me.options.pageNo == 1) {
@@ -106,7 +106,7 @@
 				} else if(id =="lastPage") {
 					me.options.pageNo = me.options.totalPage;
 				}else{
-					me.options.pageNo = +num;
+					me.options.pageNo = +currentPage;
 				}
 				me.creatHtml();
 				if(me.options.callback) {

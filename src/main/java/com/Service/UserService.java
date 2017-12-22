@@ -5,6 +5,8 @@ import com.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author: zhangocean
  * @Date: Created in 14:11 2017/12/6
@@ -21,6 +23,16 @@ public class UserService {
      */
     public void saveUser(UserInfo userInfo) {
         userRepository.save(userInfo);
+    }
+
+
+    /**
+     * 查询所有信息
+     */
+    public List<UserInfo> findAllUsers() {
+        List<UserInfo> userInfoList = userRepository.findAll();
+
+        return userInfoList;
     }
 
 }

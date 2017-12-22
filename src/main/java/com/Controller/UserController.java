@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * @author: zhangocean
  * @Date: Created in 14:11 2017/12/6
- * Describe: 控制层
+ * Describe: 保存信息- 控制层
  */
 @Controller
 public class UserController {
@@ -36,9 +36,9 @@ public class UserController {
         return "index";
     }
 
-    @RequestMapping(value = "/submit", method = RequestMethod.POST)
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
     @ResponseBody
-    public void submit(HttpServletRequest request) {
+    public void saveUser(HttpServletRequest request) {
 
         /**
          * 使用传统方法直接从表单获取数据

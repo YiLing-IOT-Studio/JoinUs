@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Describe: 数据库操作
  */
 public interface UserRepository extends JpaRepository<UserInfo, Integer> {
-
 }
+
