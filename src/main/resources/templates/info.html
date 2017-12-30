@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0 maximum-scale=1, minimum-scale=1, user-scalable=no"/>
@@ -9,8 +9,8 @@
     <meta name="keywords" content="关键词"/>
     <meta  name="description" content="描述"/>
     <!--<link rel="shortcut icon" href="images/logo1.png" />-->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../static/css/info.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/info.css" rel="stylesheet"/>
 </head>
 <body>
 <header>
@@ -18,11 +18,7 @@
 </header>
 <div class="container col-md-10 col-md-offset-1">
     <div id="display">
-        <!--<section>-->
-        <!--<p class="h5 left title"><strong></strong></p>-->
-        <!--<div class="Selfintro"></div>-->
-        <!--<p class="details"></p>-->
-        <!--</section>-->
+
     </div>
     <div id="pagi-father">
         <div id="pagination">
@@ -46,82 +42,9 @@
         </div>
     </div>
 </div>
-<script src="../static/js/jquery-1.12.0.min.js"></script>
-<script src="../static/js/bootstrap.min.js"></script>
-<script src="../static/js/paging.js"></script>
-<!--<script src="../static/js/info.js"></script>-->
-<script>
-    //分页
-    //    $("#pagination").paging({
-    //        pageNo:1,
-    //        totalPage: 9,
-    //        totalSize: 90,
-    //        callback: function(currentPage) {
-    //            $.ajax({
-    //                type: 'get',
-    //                url: '/submit',
-    //                dataType: 'json',
-    //                async: false,
-    //                success: function (data) {
-    //                    $.each(data, function (index, obj) {
-    //                    var sec = $('<section></section>');
-    //                    // 添加标题
-    //                    var Uid = $('<p class="h5 left"></p>');
-    //                    Uid.append('<srtong>' + obj['name'] + '</srtong>');
-    //                    sec.append(Uid);
-    //                    // 添加主体
-    //                    var SelfIntro = $('<div class="Selfintroduction"></div>');
-    //                    SelfIntro.append(obj['selfbriefly']);
-    //                    sec.append(SelfIntro);
-    //                    //添加其余详细信息
-    //                    var Details = $('<p></p>');
-    //                    Details.append(obj['professional'] + ' /' + obj['tel'] + ' /' + obj['email']);
-    //                    sec.append(Details);
-    //                    $('#display').append(sec);
-    //                     });
-    //        }
-    //    });
-
-    //    参数为当前页
-    ajaxTest(1);
-    function ajaxTest(currentPage) {
-        $.ajax({
-            type: 'get',
-            url: '/submit',
-            dataType: 'json',
-            async: false,
-            success: function (data) {
-                $.each(data, function (index, obj) {
-                    var sec = $('<section></section>');
-                    // 添加标题
-                    var Uid = $('<p class="h5 left"></p>');
-                    Uid.append('<srtong>' + obj['name'] + '</srtong>');
-                    sec.append(Uid);
-                    // 添加主体
-                    var SelfIntro = $('<div class="Selfintroduction"></div>');
-                    SelfIntro.append(obj['selfbriefly']);
-                    sec.append(SelfIntro);
-                    //添加其余详细信息
-                    var Details = $('<p></p>');
-                    Details.append(obj['professional'] + ' /' + obj['tel'] + ' /' + obj['email']);
-                    sec.append(Details);
-                    $('#display').append(sec);
-                });
-                //分页
-                $("#pagination").paging({
-                    pageNo: currentPage,//当前所在页码
-                    totalPage: data.totalPage,//总页数
-                    totalSize: data.totalSize,//总记录数
-                    callback: function (currentPage) {
-                        ajaxTest(currentPage)
-                    }
-                })
-            },
-            error: function () {
-                alert('获取消息失败！');
-            }
-        })
-    }
-</script>
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/paging.js"></script>
+<script src="js/info.js"></script>
 </body>
 </html>

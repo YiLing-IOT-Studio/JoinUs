@@ -46,4 +46,4 @@ function ajaxTest(currentPage) {
         }
     });
 };
-
+ajaxTest(1);

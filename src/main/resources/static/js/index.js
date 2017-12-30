@@ -175,7 +175,7 @@ window.onload=function(){
             var formJ = JSON.stringify(formT);//返回Json字符串
             $.ajax({
                 type:'POST',
-                url:'/submit',
+                url:'/saveUser',
                 dataType: 'text',
                 data:{
                     'data':formJ

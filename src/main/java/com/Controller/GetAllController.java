@@ -47,6 +47,7 @@ public class GetAllController {
         map.put("totalSize",userInfoList.size());
         map.put("totalPage",Math.ceil((double)userInfoList.size()/10));
         jsonArray.add(map);
+        System.out.println(jsonArray);
 
         return jsonArray;
     }
